@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:local="clr-namespace:diary.Entity"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#dee0e6"
+             x:Class="diary.Pages.Homepage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="BackgroundColor">#95adbe</Color>
+            <Color x:Key="CellBackgroundColor">#95adbe</Color>
+            <Color x:Key="SwipeItemTextColor">#FFECCB</Color>
+            <Color x:Key="SwipeItemBackgroundColor">#574f7d</Color>
+            
+            <Color x:Key="SubTitleColor">#FFFFFF</Color>
+
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0, 60, 0, 0" />
+            </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource CellBackgroundColor}" />
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="Margin" Value="0, 12, 0, 0" />
+            </Style>
+
+            
+
+            <Style x:Key="NameStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SubTitleColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="Margin" Value="6, 0, 6, 6" />
+            </Style>
+
+            
+
+            <Style x:Key="SwipeItemBorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource SwipeItemBackgroundColor}" />
+                <Setter Property="CornerRadius" Value="0, 12, 0, 12" />
+                <Setter Property="Margin" Value="0, 12, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemIconStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="30" />
+            </Style>
+
+            <Style x:Key="SwipeItemTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SwipeItemTextColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0, 48, 0, 0" />
+            </Style>
+
+            
+
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+   
+    <ContentPage.Content>
+        <Grid RowDefinitions="130,*,*,70,70,60"  RowSpacing="0" Margin="0,10,0,10">
+            <Grid Grid.Row="0" RowDefinitions="*,*,*,*" ColumnDefinitions="2*,*,*" BackgroundColor="#dee0e6">
+                <Rectangle   x:Name="mainRect"  Grid.Row="0" Grid.RowSpan="4"
+            Grid.Column="1" Grid.ColumnSpan="2" 
+             StrokeThickness="4">
+                    <Rectangle.Stroke>
+                        <LinearGradientBrush>
+                            <GradientStop x:Name="tealGrad"  Color="#95adbe" Offset="0"/>
+                            <GradientStop x:Name="orangeGrad"  Color="#574f7d" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Stroke>
+                </Rectangle>
+                <Image 
+             Aspect="AspectFill" x:Name="profileImage"  Grid.Row="0" Grid.RowSpan="4" Grid.Column="0"/>
+                <Label Text="Name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#574f7d" FontAttributes="Bold"/>
+                <Label x:Name="Name" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+                <Label Text="Email" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#574f7d" FontAttributes="Bold"/>
+                <Label x:Name="Email"  Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+            </Grid>
+            <!--<Image Source="https://www.samuelthomasdavies.com/wp-content/uploads/2020/06/How-to-Write-a-Book-Summary.jpg" Aspect="Fill" Grid.Row="1" Grid.RowSpan="2"/>-->
+            <Image Source="https://www.samuelthomasdavies.com/wp-content/uploads/2020/06/How-to-Write-a-Book-Summary.jpg" Aspect="Fill" Grid.Row="1" Grid.RowSpan="2"/>
+            <SwipeView Grid.Row="3"
+                    Threshold="120"
+                 BackgroundColor ="#dee0e6"
+                    HeightRequest="20">  <SwipeView.Content >
+                        <Grid
+                            >
+                            <Frame 
+                                Style="{StaticResource FrameStyle}">
+                                <Grid 
+                                    VerticalOptions="Center"
+                                    RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="180" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+
+                                    <Label
+                                        Grid.Column="0"
+                                        Grid.Row="1"
+                                        Text="New Diary Page"
+                                        Style="{StaticResource NameStyle}"/>
+                                </Grid>
+                            </Frame>
+                            <ScrollView
+                                IsEnabled="False"
+                                HorizontalOptions="End">
+                               
+                            </ScrollView>
+                        </Grid>
+                    </SwipeView.Content>
+                    <SwipeView.RightItems>
+                    
+                        <SwipeItems
+                            Mode="Reveal">
+                            <SwipeItemView Invoked="SwipeItemView_Invoked">
+                                <Grid
+                                    WidthRequest="120"
+                                    BackgroundColor="{StaticResource BackgroundColor}">
+                                    <BoxView
+                                        Style="{StaticResource SwipeItemBorderStyle}"/>
+                                
+                                    <Label                                         
+                                        Text="GO TO PAGE"
+                                        Style="{StaticResource SwipeItemTextStyle}"/>
+                                </Grid>
+                            </SwipeItemView>
+                        </SwipeItems>
+                    </SwipeView.RightItems>
+                  
+                </SwipeView>
+            <SwipeView Grid.Row="4"
+                    Threshold="120"
+                    BackgroundColor ="#dee0e6"
+                    HeightRequest="20">
+                <SwipeView.Content >
+                    <Grid
+                            >
+                        <Frame 
+                                Style="{StaticResource FrameStyle}">
+                            <Grid 
+                                    VerticalOptions="Center"
+                                    RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="180" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+
+                                <Label
+                                        Grid.Column="0"
+                                        Grid.Row="1"
+                                        Text="My Diary"
+                                        Style="{StaticResource NameStyle}"/>
+                            </Grid>
+                        </Frame>
+                        <ScrollView
+                                IsEnabled="False"
+                                HorizontalOptions="End">
+                        </ScrollView>
+                    </Grid>
+                </SwipeView.Content>
+                <SwipeView.RightItems>
+
+                    <SwipeItems
+                            Mode="Reveal">
+                        <SwipeItemView Invoked="SwipeItemView_Invoked_1">
+                            <Grid
+                                    WidthRequest="120"
+                                    BackgroundColor="{StaticResource BackgroundColor}">
+                                <BoxView
+                                        Style="{StaticResource SwipeItemBorderStyle}"/>
+                                
+                                <Label                                         
+                                        Text="GO TO PAGE"
+                                        Style="{StaticResource SwipeItemTextStyle}"/>
+                            </Grid>
+                        </SwipeItemView>
+                    </SwipeItems>
+                </SwipeView.RightItems>
+
+            </SwipeView>
+            <Button Grid.Row="5" Text="Logout" TextColor="White" BackgroundColor="#574f7d" Clicked="Button_Clicked" Margin="0,10,0,0" CornerRadius="20"/>
+
+        </Grid>
+    </ContentPage.Content>
+
+
+</ContentPage>

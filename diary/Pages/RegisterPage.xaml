@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#dee0e6"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="diary.Pages.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout Padding="32" >
+            <Grid ColumnDefinitions="*, *"   
+                    VerticalOptions="FillAndExpand">
+                <Grid Grid.Column="0" Grid.ColumnSpan="2" >
+                    <BoxView Grid.Row="0"  BackgroundColor="White"  CornerRadius="30" />
+                    <Grid   Grid.Row="0"            
+                            Margin="16,16,16,16"
+                            RowDefinitions="*,*,*,*,*,*,*,*,*,*,35,35,35"
+                            VerticalOptions="Center">
+                        <Label
+                Grid.Row="0"
+                HorizontalTextAlignment="Start"
+                FontFamily="DINBold"
+                FontAttributes="Bold"
+                Text="REGISTER"
+                FontSize="26"
+                TextColor="Black"/>
+                        <Label
+                Grid.Row="1"
+                Text="Email"
+                FontSize="18"
+                TextColor="Black"
+                FontAttributes="Bold"/>
+                        <Entry
+                Grid.Row="2"
+                   Grid.Column="0"
+                Grid.ColumnSpan="2"               
+                Placeholder="Enter email"
+                x:Name="emailEntry"
+                />
+                        <Label
+                Grid.Row="3"
+             Grid.Column="0"
+                Grid.ColumnSpan="2"    
+                Text="Name Surname"
+                FontSize="18"
+                                FontAttributes="Bold"
+                TextColor="Black"/>
+                        <Entry
+                Grid.Row="4"
+                 Grid.Column="0"
+                Grid.ColumnSpan="2"                 
+                Placeholder="Enter name surname"
+                x:Name="nameEntry"/>
+                        <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"    
+                Margin="0,4,0,0"
+                Text="Password"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="Black"/>
+                        <Entry
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"                
+                Placeholder="Enter your password"
+                x:Name="passwordEntry"
+                MaxLength="10"
+                IsPassword="True"/>
+                        <Label
+                Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"    
+                Margin="0,4,0,0"
+                Text="Confirm Password"
+                FontSize="18" 
+                FontAttributes="Bold"
+                TextColor="Black"/>
+                        <Entry
+                Grid.Row="8"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"                
+                Placeholder="Enter your password again"
+                x:Name="passwordEntry2"
+                MaxLength="10"
+                IsPassword="True"/>
+                        <Entry
+                Grid.Row="9"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"                
+                Placeholder="ImageUrl"
+                x:Name="ImageUrlEntry"
+                MaxLength="10"/>
+                        <Button Clicked="Button_Clicked" Text="Upload Photo" TextColor="White" FontAttributes="Bold" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="30" BackgroundColor="#574f7d">
+                        </Button>
+                        <Button Clicked="Button_Clicked1" Text="REGıSTER" TextColor="White" Font="Bold" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="30" BackgroundColor="#574f7d">
+                        </Button>
+                        <Label Grid.Row="12" Text="I do not have an account. Register." WidthRequest="100">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

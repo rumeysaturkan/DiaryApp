@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#dee0e6"
+             x:Class="diary.Pages.DiaryPageCreate"
+             >
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     Padding="10, 0">
+
+            <pancake:PancakeView CornerRadius="20"
+                              
+                               HorizontalOptions="EndAndExpand"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               VerticalOptions="CenterAndExpand"
+                               >
+                <Image x:Name="profileImage" Aspect="AspectFill"/>
+
+            </pancake:PancakeView>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="*,2*,2*,4*,2*,2*,Auto,Auto" VerticalOptions="Center" RowSpacing="15"  Margin="20,5,20,20">
+            <Label Grid.Row="0" Text="New Diary Page"  FontSize="Large" TextColor="Black" />
+            <BoxView Grid.Row="1" BackgroundColor="White" CornerRadius="20" />
+            <DatePicker Grid.Row="1" x:Name="DatePicker" 
+            DateSelected="DatePicker_DateSelected"  Margin="5,5,5,5"             />
+            <BoxView Grid.Row="2" BackgroundColor="White" CornerRadius="20" />
+            <Entry Grid.Row="2"  x:Name="tiletEntry" Placeholder="Title"  Margin="5,5,5,5" />
+            <BoxView Grid.Row="3" BackgroundColor="White" CornerRadius="20" />
+            <Editor Grid.Row="3"  x:Name="textEntry" Placeholder="Dear Diary" Margin="10,10,10,10"  />
+            <BoxView Grid.Row="4" BackgroundColor="White" CornerRadius="20" />
+            <Entry Grid.Row="4"  x:Name="ImageEntry" Placeholder="Image"  Margin="5,5,5,5" />
+            <BoxView Grid.Row="5" BackgroundColor="White" CornerRadius="20"  />
+            <Entry Grid.Row="5"  x:Name="PointEntry" Placeholder="Point"  Margin="5,5,5,5" Keyboard="Numeric" />
+
+            <Button Grid.Row="6" Text="Create" Clicked="Button_Clicked" TextColor="White" BackgroundColor="#95adbe" CornerRadius="20"/>
+            <Button Grid.Row="7" Text="Pick Photo" TextColor="White"
+        Clicked="OnPickPhotoButtonClicked" BackgroundColor="#574f7d" CornerRadius="20" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>  

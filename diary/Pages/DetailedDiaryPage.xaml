@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+            
+             BackgroundColor="#dee0e6"
+             xmlns:controls="clr-namespace:diary"
+             x:Class="diary.Pages.DetailedDiaryPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     Padding="10, 0">
+
+            <pancake:PancakeView CornerRadius="20"
+                               HorizontalOptions="EndAndExpand"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               VerticalOptions="CenterAndExpand"
+                               >
+                <Image Source="{Binding Diary.Person.ImageUrl}"
+                                            Aspect="AspectFill"/>
+            </pancake:PancakeView>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+
+        <controls:ExtendedScrollView HasTopPadding="False">
+            <StackLayout Padding="0, 0, 0, 40">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding Diary.ImageUrl}"
+                                                Grid.Row="0"
+                                                HeightRequest="400"
+                                                Aspect="AspectFill"/>
+                    <pancake:PancakeView Grid.Row="1"
+                                       x:Name="detailContainer"
+                                       Style="{StaticResource cardContainerStyle}"
+                                       Margin="20, -50, 20, 0">
+                        <Grid Padding="10, 15"
+                              RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Diary.Title}"
+                                   TextColor="#574f7d"
+                                   FontAttributes="Bold"
+                                 
+                                   FontSize="Large"
+                                   Margin="10, 40, 0 , 0"/>
+                            <Label Text="{Binding Diary.Text}"
+                                   Margin="10"
+                                   FontSize="Medium"
+                                   TextColor="{DynamicResource secondaryLabel}"
+                                   Grid.Row="1"/>
+                            <StackLayout Grid.Row="2"
+                                         Padding="15"
+                                         Orientation="Horizontal">
+                                <Label HorizontalOptions="StartAndExpand"
+                                       FontSize="Medium"
+                                       TextColor="{DynamicResource secondaryLabel}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+
+                                            <Span Text="{Binding Diary.Date}"/>
+
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label TextColor="{DynamicResource secondaryLabel}"
+                                       FontSize="Medium">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Point: &#160;" FontSize="Medium"  TextColor="#574f7d" FontAttributes="Bold"/>
+                                            <Span Text="{Binding Diary.Point}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </Grid>
+                    </pancake:PancakeView>
+                </Grid>
+            </StackLayout>
+        </controls:ExtendedScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

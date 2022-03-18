@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diary.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#dee0e6">
+
+    <Grid ColumnDefinitions="*,279,*" 
+        RowDefinitions="*,3*" Margin="0,50,0,0">
+        <Rectangle   x:Name="mainRect"  Grid.Row="0"
+            Grid.Column="1" WidthRequest="120" HeightRequest="120"
+             StrokeThickness="10">
+            <Rectangle.Stroke>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="tealGrad" Color="#95adbe"  Offset="0"/>
+                    <GradientStop x:Name="orangeGrad" Color="#574f7d" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+        </Rectangle>
+
+
+        <Image
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+           WidthRequest="170" HeightRequest="250"
+            Source="https://jf-staeulalia.pt/img/other/04/collection-feather-pen-cliparts-14.jpg"/>
+        <Grid Grid.Column="1" Grid.Row="1"
+              RowDefinitions="30,40,20,40,25,44,120,20"
+              ColumnDefinitions="22,*,*,22"
+              >
+            <Path
+                Grid.Row="0"
+                Grid.RowSpan="7"
+                Grid.ColumnSpan="4"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Fill="{AppThemeBinding Dark= #333333, Light=#FFFFFF}"
+                Data="M251,0 C266.463973,-2.84068575e-15 279,12.536027 279,28 L279,276 C279,291.463973 266.463973,304 251,304 L214.607,304 L214.629319,304.009394 L202.570739,304.356889 C196.091582,304.5436 190.154631,308.020457 186.821897,313.579883 L186.821897,313.579883 L183.402481,319.283905 C177.100406,337.175023 160.04792,350 140,350 C119.890172,350 102.794306,337.095694 96.5412691,319.115947 L96.5273695,319.126964 L92.8752676,313.28194 C89.5084023,307.893423 83.6708508,304.544546 77.3197008,304.358047 L65.133,304 L28,304 C12.536027,304 1.8937905e-15,291.463973 0,276 L0,28 C-1.8937905e-15,12.536027 12.536027,2.84068575e-15 28,0 L251,0 Z"
+                />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalTextAlignment="Start"
+                FontFamily="DINBold"
+                Text="LOGIN"
+                FontAttributes="Bold" 
+                FontSize="22"
+                TextColor="Black"/>
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Text="Email"
+                FontAttributes="Bold" 
+                FontSize="18"
+                TextColor="Black"/>
+            <Entry
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"                
+                Placeholder="Enter email"
+                x:Name="emailEntry"
+                />
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="0,4,0,0"
+                Text="Password"
+                FontAttributes="Bold" 
+                FontSize="18"
+                TextColor="Black"/>
+            <Entry
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"                
+                Placeholder="Enter password"
+                x:Name="passwordEntry"
+                IsPassword="True"
+                />
+
+            <Grid ColumnDefinitions="64"
+                  RowDefinitions="64"
+                  Grid.Column="1"
+                Grid.ColumnSpan="2"
+                  Grid.Row="6"
+                  HorizontalOptions="Center"
+                  VerticalOptions="End"
+                  Margin="0,0,0,13" >
+                <Button Clicked="Button_Clicked" Text="OK" FontAttributes="Bold" WidthRequest="80"
+    HeightRequest ="80"
+    TextColor="White"
+    CornerRadius ="60"
+    VerticalOptions   ="Center"
+    HorizontalOptions ="Center"
+    BackgroundColor   ="#95adbe" >
+                </Button>
+            </Grid>
+            <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Text="I do not have an account. Register.">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </Grid>
+</ContentPage>

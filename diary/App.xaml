@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="diary.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BodyTextColor">#FFFFFF</Color>
+            <Color x:Key="primaryColor">#3596fc</Color>
+            <Style x:Key="buttonContainerStyle" TargetType="yummy:PancakeView">
+                <Setter Property="CornerRadius"
+                Value="10"/>
+            </Style>
+            <Style x:Key="cardContainerStyle" TargetType="yummy:PancakeView">
+                <Setter Property="CornerRadius"
+                Value="10"/>
+                <Setter Property="Opacity"
+                Value="0"/>
+                <Setter Property="TranslationY"
+                Value="100"/>
+                <Setter Property="BackgroundColor"
+                Value="{DynamicResource background}"/>
+            </Style>
+
+            <Style x:Key="cardTitleStyle"
+           TargetType="Label">
+                <Setter Property="FontSize"
+                Value="Large"/>
+                <Setter Property="TextColor"
+                Value="{DynamicResource mainLabel}"/>
+                <Setter Property="FontFamily"
+                Value="{DynamicResource InterBold}"/>
+            </Style>
+
+            <Style x:Key="borderStyle"
+           TargetType="BoxView">
+                <Setter Property="BackgroundColor"
+                Value="{DynamicResource borderColor}"/>
+                <Setter Property="HeightRequest"
+                Value="1"/>
+            </Style>
+
+            <Style x:Key="listOptionLayoutStyle"
+           TargetType="yummy:PancakeView">
+
+
+                <Setter Property="VerticalOptions"
+                Value="CenterAndExpand"/>
+            </Style>
+            <Style x:Key="listOptionLayoutTextStyle"
+           TargetType="Label">
+                <Setter Property="Padding"
+                Value="10"/>
+                <Setter Property="VerticalOptions"
+                Value="CenterAndExpand"/>
+                <Setter Property="TextColor"
+                Value="{StaticResource primaryColor}"/>
+            </Style>
+            
+            <OnPlatform
+                x:Key="RegularFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif"
+                iOS="HelveticaNeue" />
+            <OnPlatform
+                x:Key="LightFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-light"
+                iOS="HelveticaNeue-Light" />
+            <OnPlatform
+                x:Key="MediumFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-medium"
+                iOS="HelveticaNeue-Medium" />
+            <OnPlatform
+                x:Key="BoldFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-medium"
+                iOS="HelveticaNeue-Bold" />
+
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+
+            </Style>
+
+            <Style x:Key="HandleLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+
+            <Style x:Key="BodyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
